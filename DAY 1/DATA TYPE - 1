@@ -1,0 +1,36 @@
+module datatype;
+  reg signed [3:0]a; //4 state, user defined, unsigned
+ // wire [3:0]b;         // 4 state, user defined, unsigned
+  logic[3:0] c;        // 4 states,user defined, unsigned
+  integer d;      //4 states, 32bits,signed
+  real e;         // 4 states, 64 bits, unsigned
+  time f;         //4states,64 bits,unsigned
+  bit [3:0]g;          //2 states,userdefined ,unsigned
+  byte h;         //2 states,8 bits,signed
+  int i;          //2 states,32 bits,signed
+  shortint j;     //2 states,16 bits,signed
+  longint k;      //2 states,64 bits,signed
+  
+ initial
+    begin
+      a =  -2; 
+    //  b =  'h 11zz;                
+      c =  'h 0xf;        
+      d = -8; 
+      e = 'h 111 ; 
+      f = 'h 11xzzzzzz; 
+      g = 'h 1111; 
+      h =  'h 11111111;
+      i = 'h   11111111;
+      j = 'h 1111111;
+      k = 'h 1111;
+      
+    end
+     initial
+    begin #10;
+      $display("a = %h c = %h d = %h", a,  c, d);
+      $display("e = %h f = %b g = %h h = %h", e, f, g, h);
+      $display("i = %h j = %b  k= %h  ", i, j, k);
+     #10 $finish(2);
+   end              
+ endmodule
